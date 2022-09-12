@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Viga&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Viga&display=swap");
 .footer .footer-container, .header .header-info .header-info-container, .header .header-bar .header-bar-container {
   height: inherit;
   margin: auto;
@@ -12,16 +11,16 @@
   display: block;
 }
 
-.footer .footer-container, .header .header-info .header-info-container, .header .header-bar .header-bar-container {
-  height: inherit;
-  margin: auto;
-  max-width: 1550px;
-  width: calc(100% - 340px);
+.all-container.ships .header .header-info-content.ships, .all-container.intelligence .header .header-info-content.intelligence, .all-container.space .header .header-info-content.space, .all-container.home .header .header-info-content.home {
+  animation: appear 1s 1 both;
 }
-
-.header .header-info .scroll-down .scroll-down-button::after, .header .header-info .scroll-down .scroll-down-button::before, .header .header-info::before, .header .header-info::after, .header .header-bar .header-bar-container .nav-list .nav-list-item::after {
-  content: "";
-  display: block;
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .header {
@@ -73,6 +72,8 @@
 .header .header-info {
   align-items: center;
   background-image: url(../img/bg-screen-home.png);
+  background-position-x: right;
+  background-position-y: center;
   background-size: cover;
   display: flex;
   min-height: 100vh;
@@ -98,10 +99,27 @@
   position: relative;
   z-index: 1;
 }
-.header .header-info .header-info-container .header-info-home {
+.header .header-info .header-info-container .header-info-content {
+  display: none;
   max-width: 480px;
 }
-.header .header-info .header-info-container .header-info-home .title {
+.header .header-info .header-info-container .header-info-content.intelligence, .header .header-info .header-info-container .header-info-content.ships {
+  align-items: center;
+  gap: 50px;
+  display: none;
+  flex-wrap: wrap;
+  max-width: none;
+}
+.header .header-info .header-info-container .header-info-content.intelligence .neural-networks-image, .header .header-info .header-info-container .header-info-content.intelligence .ships-image, .header .header-info .header-info-container .header-info-content.ships .neural-networks-image, .header .header-info .header-info-container .header-info-content.ships .ships-image {
+  border-radius: 50%;
+  height: 450px;
+  overflow: hidden;
+  width: 450px;
+}
+.header .header-info .header-info-container .header-info-content.intelligence .neural-network-info, .header .header-info .header-info-container .header-info-content.ships .neural-network-info {
+  max-width: 350px;
+}
+.header .header-info .header-info-container .header-info-content .title {
   color: #fff;
   font-family: "Viga", sans-serif;
   font-size: 78px;
@@ -109,14 +127,14 @@
   line-height: 105px;
   text-transform: uppercase;
 }
-.header .header-info .header-info-container .header-info-home .subtitle {
+.header .header-info .header-info-container .header-info-content .subtitle {
   color: #fff;
   font-family: "Rubik", sans-serif;
   font-size: 25px;
   font-weight: 300;
   text-transform: uppercase;
 }
-.header .header-info .header-info-container .header-info-home .text {
+.header .header-info .header-info-container .header-info-content .text {
   color: #fff;
   font-size: 21px;
   font-weight: 400;
@@ -124,24 +142,27 @@
   line-height: 25px;
   text-align: left;
 }
-.header .header-info .header-info-container .header-info-home .blastoff-logo {
+.header .header-info .header-info-container .header-info-content .blastoff-logo {
   margin-top: 25px;
   width: 150px;
 }
 .header .header-info .scroll-down {
-  bottom: 0;
+  bottom: 120px;
   left: 50%;
   position: absolute;
-  transform: translateX(-50%);
+  margin: auto;
+  transform: translate(-50%, 0);
   z-index: 1;
 }
 .header .header-info .scroll-down .text {
+  margin-left: 10px;
   color: #fff;
   font-family: "Rubik", sans-serif;
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 0.4em;
   line-height: 17px;
+  text-align: center;
   text-transform: uppercase;
 }
 .header .header-info .scroll-down .scroll-down-button {
@@ -149,7 +170,7 @@
   border: solid 2px #fff;
   cursor: pointer;
   height: 75px;
-  margin: 30px auto;
+  margin: 30px auto 0;
   overflow: hidden;
   position: relative;
   width: 75px;
@@ -165,9 +186,10 @@
 .header .header-info .scroll-down .scroll-down-button::after {
   content: url(../img/arrow-bottom.svg);
   left: 50%;
-  position: absolute;
-  top: calc(50% + 5px);
+  top: calc(50% + 8px);
   transform: translate(-50%, -50%);
+  position: absolute;
+  bottom: 0;
 }
 .header .header-info .scroll-down .scroll-down-button:hover {
   border-color: #01ac8b;
@@ -197,6 +219,31 @@
 }
 .footer .footer-container .blastoff-logo {
   width: 150px;
+}
+
+.all-container.home .header .header-info {
+  background-image: url(../img/bg-screen-home.png);
+}
+.all-container.home .header .header-info-content.home {
+  display: block;
+}
+.all-container.space .header .header-info {
+  background-image: url(../img/bg-screen-space.png);
+}
+.all-container.space .header .header-info-content.space {
+  display: block;
+}
+.all-container.intelligence .header .header-info {
+  background-image: url(../img/bg-screen-intelligence.png);
+}
+.all-container.intelligence .header .header-info-content.intelligence {
+  display: flex;
+}
+.all-container.ships .header .header-info {
+  background-image: url(../img/bg-screen-intelligence.png);
+}
+.all-container.ships .header .header-info-content.ships {
+  display: flex;
 }
 
 /*# sourceMappingURL=styles.css.map */

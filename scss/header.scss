@@ -1,34 +1,8 @@
-// limao
-
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Viga&display=swap");
-
-$bg-header-footer: #0c0c0c;
-$bg-header-footer-08: #0c0c0cee;
-$color-blue: #090e6c;
-$color-green-dark: #01ac8b;
-$color-green-light: #01eabd;
-$color-red: #e31018;
-$font-color: #fff;
-$font-inter: "Inter", sans-serif;
-$font-rubik: "Rubik", sans-serif;
-$font-viga: "Viga", sans-serif;
-
-%container {
-  height: inherit;
-  margin: auto;
-  max-width: 1550px;
-  width: calc(100% - 340px);
-}
-%after-before {
-  content: "";
-  display: block;
-}
-// end limao
-
 .header {
   background-color: $bg-header-footer;
   padding-top: 100px;
   position: relative;
+
   & .header-bar {
     background-color: $bg-header-footer-08;
     height: 100px;
@@ -83,6 +57,8 @@ $font-viga: "Viga", sans-serif;
   & .header-info {
     align-items: center;
     background-image: url(../img/bg-screen-home.png);
+    background-position-x: right;
+    background-position-y: center;
     background-size: cover;
     display: flex;
     min-height: 100vh;
@@ -103,6 +79,7 @@ $font-viga: "Viga", sans-serif;
       top: 0;
       width: 100%;
     }
+
     & .header-info-container {
       @extend %container;
       margin: 0 auto;
@@ -110,8 +87,25 @@ $font-viga: "Viga", sans-serif;
       position: relative;
       z-index: 1;
 
-      & .header-info-home {
+      & .header-info-content {
+        display: none;
         max-width: 480px;
+        &.intelligence, &.ships {
+          align-items: center;
+          gap: 50px;
+          display: none;
+          flex-wrap: wrap;
+          max-width: none;
+          & .neural-networks-image, & .ships-image {
+            border-radius: 50%;
+            height: 450px;
+            overflow: hidden;
+            width: 450px;
+          }
+          & .neural-network-info {
+            max-width: 350px;
+          }
+        }
 
         & .title {
           color: $font-color;
@@ -144,19 +138,22 @@ $font-viga: "Viga", sans-serif;
       }
     }
     & .scroll-down {
-      bottom: 0;
+      bottom: 120px;
       left: 50%;
       position: absolute;
-      transform: translateX(-50%);
+      margin: auto;
+      transform: translate(-50%, 0);
       z-index: 1;
-      
+
       & .text {
+        margin-left: 10px;
         color: $font-color;
         font-family: $font-rubik;
         font-size: 14px;
         font-weight: 300;
         letter-spacing: 0.4em;
         line-height: 17px;
+        text-align: center;
         text-transform: uppercase;
       }
 
@@ -165,7 +162,7 @@ $font-viga: "Viga", sans-serif;
         border: solid 2px $font-color;
         cursor: pointer;
         height: 75px;
-        margin: 30px auto;
+        margin: 30px auto 0;
         overflow: hidden;
         position: relative;
         width: 75px;
@@ -185,10 +182,13 @@ $font-viga: "Viga", sans-serif;
         &::after {
           @extend %after-before;
           content: url(../img/arrow-bottom.svg);
-          left: 50%;
-          position: absolute;
-          top: calc(50% + 5px);
+          left: calc(50%);
+          top: calc(50% + 8px);
           transform: translate(-50%, -50%);
+          position: absolute;
+          bottom: 0;
+          // top: calc(50% + 5px);
+          // transform: translate(-50%, -50%);
         }
         &:hover {
           border-color: $color-green-dark;
