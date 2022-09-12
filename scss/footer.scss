@@ -1,0 +1,20 @@
+.footer{
+  background-color: $bg-header-footer;
+  border-top: solid 1px #fff;
+  height: 110px;
+
+  & .footer-container{
+    @extend %container;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    & .footer-copy{
+      color: $font-color;
+      font-size: 14px;
+    }
+    & .blastoff-logo{
+      width: 150px;
+    }
+  }
+}

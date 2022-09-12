@@ -1,0 +1,55 @@
+.header {
+  position: relative;
+  & .header-bar {
+    background-color: $bg-header-footer-08;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    & .header-bar-container {
+      @extend %container;
+      align-items: center;
+      display: flex;
+      & .nav-list {
+        align-items: center;
+        column-gap: 80px;
+        display: flex;
+        height: inherit;
+        width: 100%;
+        & .nav-list-item {
+          position: relative;
+          &:hover {
+            &::after {
+              width: 50%;
+            }
+          }
+          &::after {
+            @extend %after-before;
+            background-image: linear-gradient(to right,$color-green-dark 25%,$color-green-light 75%);
+            bottom: -10px;
+            height: 2px;
+            position: absolute;
+            transition: .3s;
+            width: 0;
+          }
+          & .text {
+            color: $font-color;
+            font-weight: bold;
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      & .toodoo-logo {
+        width: 125px;
+      }
+    }
+  }
+
+  & .header-info {
+    background-image: url(../img/bg-screen-home.png);
+    background-size: cover;
+    height: 100px;
+    min-height: 100vh;
+  }
+}

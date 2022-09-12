@@ -1,0 +1,23 @@
+{
+  "name": "desafio1_web_lucas",
+  "version": "1.0.0",
+  "description": "Primeiro desafio de front-end do BlastOff.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass -w scss/styles.scss css/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Toodoo-BlastOff/Desafio1_Web_Lucas.git"
+  },
+  "keywords": [
+    "Curiosidades"
+  ],
+  "author": "https://github.com/Lusques",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Toodoo-BlastOff/Desafio1_Web_Lucas/issues"
+  },
+  "homepage": "https://github.com/Toodoo-BlastOff/Desafio1_Web_Lucas#readme"
+}
