@@ -1,11 +1,15 @@
 .header {
+  background-color: $bg-header-footer;
+  padding-top: 100px;
   position: relative;
+
   & .header-bar {
     background-color: $bg-header-footer-08;
     height: 100px;
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 1000;
     & .header-bar-container {
       @extend %container;
       align-items: center;
@@ -25,11 +29,15 @@
           }
           &::after {
             @extend %after-before;
-            background-image: linear-gradient(to right,$color-green-dark 25%,$color-green-light 75%);
+            background-image: linear-gradient(
+              to right,
+              $color-green-dark 25%,
+              $color-green-light 75%
+            );
             bottom: -10px;
             height: 2px;
             position: absolute;
-            transition: .3s;
+            transition: 0.3s;
             width: 0;
           }
           & .text {
@@ -47,9 +55,148 @@
   }
 
   & .header-info {
+    align-items: center;
     background-image: url(../img/bg-screen-home.png);
+    background-position-x: right;
+    background-position-y: center;
     background-size: cover;
-    height: 100px;
+    display: flex;
     min-height: 100vh;
+    position: relative;
+    &::after {
+      @extend %after-before;
+      background-image: linear-gradient(90deg, #000a 25%, #0000);
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+    &::before {
+      @extend %after-before;
+      background-image: linear-gradient(#0000 75%, #000);
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    & .header-info-container {
+      @extend %container;
+      margin: 0 auto;
+      margin-top: -150px;
+      position: relative;
+      z-index: 1;
+
+      & .header-info-content {
+        display: none;
+        max-width: 480px;
+        &.intelligence, &.ships {
+          align-items: center;
+          gap: 50px;
+          display: none;
+          flex-wrap: wrap;
+          max-width: none;
+          & .neural-networks-image, & .ships-image {
+            border-radius: 50%;
+            height: 450px;
+            overflow: hidden;
+            width: 450px;
+          }
+          & .neural-network-info {
+            max-width: 350px;
+          }
+        }
+
+        & .title {
+          color: $font-color;
+          font-family: $font-viga;
+          font-size: 78px;
+          letter-spacing: 0.05em;
+          line-height: 105px;
+          text-transform: uppercase;
+        }
+        & .subtitle {
+          color: $font-color;
+          font-family: $font-rubik;
+          font-size: 25px;
+          font-weight: 300;
+          text-transform: uppercase;
+        }
+        & .text {
+          color: $font-color;
+          font-size: 21px;
+          font-weight: 400;
+          letter-spacing: 0.025em;
+          line-height: 25px;
+          text-align: left;
+        }
+
+        & .blastoff-logo {
+          margin-top: 25px;
+          width: 150px;
+        }
+      }
+    }
+    & .scroll-down {
+      bottom: 120px;
+      left: 50%;
+      position: absolute;
+      margin: auto;
+      transform: translate(-50%, 0);
+      z-index: 1;
+
+      & .text {
+        margin-left: 10px;
+        color: $font-color;
+        font-family: $font-rubik;
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: 0.4em;
+        line-height: 17px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      & .scroll-down-button {
+        border-radius: 50%;
+        border: solid 2px $font-color;
+        cursor: pointer;
+        height: 75px;
+        margin: 30px auto 0;
+        overflow: hidden;
+        position: relative;
+        width: 75px;
+        transition: 0.6s;
+        &::before {
+          @extend %after-before;
+          background-image: linear-gradient(
+            270deg,
+            $color-green-dark 25%,
+            $color-green-light 75%
+          );
+          height: 100%;
+          opacity: 0;
+          transition: 0.3s;
+          width: 100%;
+        }
+        &::after {
+          @extend %after-before;
+          content: url(../img/arrow-bottom.svg);
+          left: calc(50%);
+          top: calc(50% + 8px);
+          transform: translate(-50%, -50%);
+          position: absolute;
+          bottom: 0;
+          // top: calc(50% + 5px);
+          // transform: translate(-50%, -50%);
+        }
+        &:hover {
+          border-color: $color-green-dark;
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+    }
   }
 }
