@@ -1,17 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Viga&display=swap");
-.footer .footer-container, .header .header-info .header-info-container, .header .header-bar .header-bar-container {
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Viga&display=swap");
+.footer .footer-container, .main .main-home .newsletter-container, .main .main-home .come-learn-container, .main .main-home .birth-container, .header .header-info .header-info-container, .header .header-bar .header-bar-container {
   height: inherit;
   margin: auto;
   max-width: 1550px;
   width: calc(100% - 340px);
 }
 
-.header .header-info .scroll-down .scroll-down-button::after, .header .header-info .scroll-down .scroll-down-button::before, .header .header-info::before, .header .header-info::after, .header .header-bar .header-bar-container .nav-list .nav-list-item::after {
+.main .main-home .come-learn-container .learn-cards-list::before, .header .header-info .scroll-down .scroll-down-button::after, .header .header-info .scroll-down .scroll-down-button::before, .header .header-info::before, .header .header-info::after, .header .header-bar .header-bar-container .nav-list .nav-list-item::after {
   content: "";
   display: block;
 }
 
-.all-container.ships .header .header-info-content.ships, .all-container.intelligence .header .header-info-content.intelligence, .all-container.space .header .header-info-content.space, .all-container.home .header .header-info-content.home {
+.all-container.ships .header .header-info-content.ships, .all-container.intelligence .header .header-info-content.intelligence, .all-container.space .header .header-info-content.space, .all-container.home .header .header-info-content.home, .main .main-home {
   animation: appear 1s 1 both;
 }
 @keyframes appear {
@@ -184,7 +185,7 @@
   width: 100%;
 }
 .header .header-info .scroll-down .scroll-down-button::after {
-  content: url(../img/arrow-bottom.svg);
+  content: url(../img/arrow-bottom.svg) !important;
   left: 50%;
   top: calc(50% + 8px);
   transform: translate(-50%, -50%);
@@ -198,9 +199,216 @@
   opacity: 1;
 }
 
+.main .main-home .newsletter-container, .main .main-home .come-learn-container .learn-cards-list .learn-cards-item {
+  backdrop-filter: blur(13px);
+  background-image: linear-gradient(135deg, rgba(88, 88, 88, 0.75), rgba(97, 97, 97, 0.1) 85%);
+  border-radius: 15px;
+  border: solid 2px #505050;
+}
+
+.footer .footer-container, .main .main-home .newsletter-container, .main .main-home .come-learn-container, .main .main-home .birth-container, .header .header-bar .header-bar-container, .header .header-info .header-info-container {
+  height: inherit;
+  margin: auto;
+  max-width: 1100px;
+  width: calc(100% - 340px);
+}
+
+.main .main-home .come-learn-container .learn-cards-list::before, .header .header-bar .header-bar-container .nav-list .nav-list-item::after, .header .header-info::after, .header .header-info::before, .header .header-info .scroll-down .scroll-down-button::before, .header .header-info .scroll-down .scroll-down-button::after {
+  content: "";
+  display: block;
+}
+
+.all-container.ships .header .header-info-content.ships, .all-container.intelligence .header .header-info-content.intelligence, .all-container.space .header .header-info-content.space, .all-container.home .header .header-info-content.home, .main .main-home {
+  animation: appear 1s 1 both;
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.main .main-home .newsletter-container .newsletter-form .form-table .form-table-tr .td-submit input, .main .main-home .come-learn-container .learn-cards-list .learn-cards-item .card-item-button {
+  background-image: linear-gradient(90deg, #01eabd, #01ac8b);
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .all-container {
   font-family: "Inter", sans-serif;
   overflow: hidden;
+}
+
+.main {
+  background-color: #000;
+  padding: 75px 0 150px;
+}
+.main .main-home {
+  display: none;
+}
+.main .main-home .birth-container {
+  align-items: center;
+  column-gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 150px;
+  row-gap: 40px;
+}
+.main .main-home .birth-container .birth-image {
+  border-radius: 30px;
+  max-width: 510px;
+  overflow: hidden;
+  width: 100%;
+}
+.main .main-home .birth-container .birth-info {
+  max-width: calc(100% - 560px);
+  width: 100%;
+}
+@media screen and (max-width: 1399px) {
+  .main .main-home .birth-container .birth-info {
+    max-width: initial;
+  }
+}
+.main .main-home .come-learn-container .learn-cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 55px;
+  margin-top: 30px;
+  position: relative;
+}
+.main .main-home .come-learn-container .learn-cards-list::before {
+  height: 150px;
+  width: 150px;
+  background-color: #01eabd;
+  border-radius: 50%;
+  bottom: 0;
+  filter: blur(185px);
+  left: 0;
+  position: absolute;
+  transform: translate(-50%, 50%);
+}
+.main .main-home .come-learn-container .learn-cards-list .learn-cards-item {
+  padding: 37px 27px 16px;
+  height: 300px;
+  position: relative;
+  width: 260px;
+  z-index: 2;
+}
+.main .main-home .come-learn-container .learn-cards-list .learn-cards-item .figure {
+  width: 40px;
+}
+.main .main-home .come-learn-container .learn-cards-list .learn-cards-item .title {
+  font-size: 18px;
+  margin: 16px 0;
+}
+.main .main-home .come-learn-container .learn-cards-list .learn-cards-item .text {
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 20px;
+}
+.main .main-home .come-learn-container .learn-cards-list .learn-cards-item .card-item-button {
+  width: 205px;
+}
+.main .main-home .newsletter-container {
+  height: 390px;
+  padding: 50px;
+}
+.main .main-home .newsletter-container .title, .main .main-home .newsletter-container .subtitle, .main .main-home .newsletter-container .text {
+  margin: auto;
+  max-width: 430px;
+  text-align: center;
+}
+.main .main-home .newsletter-container .title {
+  line-height: 40px;
+  margin: 5px auto;
+}
+.main .main-home .newsletter-container .newsletter-form {
+  margin: 32px auto;
+  max-width: 500px;
+  width: 100%;
+}
+.main .main-home .newsletter-container .newsletter-form .form-table {
+  display: block;
+  width: 100%;
+}
+.main .main-home .newsletter-container .newsletter-form .form-table tbody {
+  display: block;
+  width: 100%;
+}
+.main .main-home .newsletter-container .newsletter-form .form-table .form-table-tr {
+  background-color: #565656;
+  border-radius: 16px;
+  border: solid 1px #01eabd;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  width: 100%;
+}
+.main .main-home .newsletter-container .newsletter-form .form-table .form-table-tr .td-input {
+  flex-grow: 1;
+  height: 60px;
+}
+.main .main-home .newsletter-container .newsletter-form .form-table .form-table-tr .td-input input {
+  background-color: #555;
+  border: 0;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  padding: 20px 15px;
+  width: 100%;
+}
+.main .main-home .newsletter-container .newsletter-form .form-table .form-table-tr .td-submit {
+  height: 60px;
+}
+.main .main-home .newsletter-container .newsletter-form .form-table .form-table-tr .td-submit input {
+  border: 0;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  max-width: 140px;
+  outline: none;
+  padding: 20px 15px;
+  width: 100%;
+}
+.main .main-home .subtitle {
+  color: #fff;
+  font-family: "Rubik", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.main .main-home .title {
+  color: #fff;
+  font-family: "Viga", sans-serif;
+  font-size: 32px;
+  letter-spacing: 0.05em;
+  margin: 5px 0 15px;
+  text-transform: uppercase;
+}
+.main .main-home .text {
+  color: #fff;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: justify;
+}
+.main .main-home .text .marked {
+  color: #01eabd;
+  font-style: italic;
+  font-weight: 600;
 }
 
 .footer {
@@ -225,6 +433,9 @@
   background-image: url(../img/bg-screen-home.png);
 }
 .all-container.home .header .header-info-content.home {
+  display: block;
+}
+.all-container.home .main-home {
   display: block;
 }
 .all-container.space .header .header-info {

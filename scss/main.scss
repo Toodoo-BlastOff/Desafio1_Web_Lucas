@@ -1,4 +1,255 @@
+// limao
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Viga&display=swap");
+
+$bg-header-footer: #0c0c0c;
+$bg-header-footer-08: #0c0c0cee;
+$color-blue: #090e6c;
+$color-green-dark: #01ac8b;
+$color-green-light: #01eabd;
+$color-red: #e31018;
+$font-color: #fff;
+$font-inter: "Inter", sans-serif;
+$font-rubik: "Rubik", sans-serif;
+$font-viga: "Viga", sans-serif;
+
+@mixin media($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+@mixin square($size) {
+  height: $size;
+  width: $size;
+}
+
+%bg-glass {
+  backdrop-filter: blur(13px);
+  background-image: linear-gradient(
+    135deg,
+    rgb(88, 88, 88, 75%),
+    rgb(97, 97, 97, 10%) 85%
+  );
+  border-radius: 15px;
+  border: solid 2px #505050;
+}
+%container {
+  height: inherit;
+  margin: auto;
+  max-width: 1100px;
+  width: calc(100% - 340px);
+}
+%after-before {
+  content: "";
+  display: block;
+}
+%appear {
+  animation: appear 1s 1 both;
+  @keyframes appear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+%card-button {
+  background-image: linear-gradient(
+    90deg,
+    $color-green-light,
+    $color-green-dark
+  );
+  border-radius: 5px;
+  color: $font-color;
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+// end limao - apagar
+
 .all-container {
   font-family: $font-inter;
   overflow: hidden;
+}
+
+.main {
+  background-color: #000;
+  padding: 75px 0 150px;
+  & .main-home {
+    @extend %appear;
+    display: none;
+    & .birth-container {
+      @extend %container;
+      align-items: center;
+      column-gap: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 150px;
+      row-gap: 40px;
+      & .birth-image {
+        border-radius: 30px;
+        max-width: 510px;
+        overflow: hidden;
+        width: 100%;
+      }
+      & .birth-info {
+        max-width: calc(100% - 560px);
+        width: 100%;
+        @include media(1399px) {
+          max-width: initial;
+        }
+      }
+    }
+
+    & .come-learn-container {
+      @extend %container;
+      & .learn-cards-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: 55px;
+        margin-top: 30px;
+        position: relative;
+        &::before {
+          @extend %after-before;
+          @include square(150px);
+          background-color: $color-green-light;
+          border-radius: 50%;
+          bottom: 0;
+          filter: blur(185px);
+          left: 0;
+          position: absolute;
+          transform: translate(-50%, 50%);
+        }
+        & .learn-cards-item {
+          @extend %bg-glass;
+          padding: 37px 27px 16px;
+          height: 300px;
+          position: relative;
+          width: 260px;
+          z-index: 2;
+          & .figure {
+            width: 40px;
+          }
+          & .title {
+            font-size: 18px;
+            margin: 16px 0;
+          }
+          & .text {
+            font-size: 14px;
+            line-height: 22px;
+            margin-bottom: 20px;
+          }
+          & .card-item-button {
+            @extend %card-button;
+            width: 205px;
+          }
+        }
+      }
+    }
+
+    & .newsletter-container {
+      @extend %bg-glass;
+      @extend %container;
+      height: 390px;
+      padding: 50px;
+      & .title,
+      & .subtitle,
+      & .text {
+        margin: auto;
+        max-width: 430px;
+        text-align: center;
+      }
+      & .title {
+        line-height: 40px;
+        margin: 5px auto;
+      }
+      & .newsletter-form {
+        margin: 32px auto;
+        max-width: 500px;
+        width: 100%;
+        & .form-table {
+          display: block;
+          width: 100%;
+          & tbody{
+            display: block;
+            width: 100%;
+          }
+          & .form-table-tr {
+            background-color: #565656;
+            border-radius: 16px;
+            border: solid 1px $color-green-light;
+            display: flex;
+            justify-content: space-between;
+            overflow: hidden;
+            width: 100%;
+
+            & .td-input {
+              flex-grow: 1;
+              height: 60px;
+              & input {
+                background-color: #555;
+                border: 0;
+                color: $font-color;
+                font-size: 14px;
+                outline: none;
+                padding: 20px 15px;
+                width: 100%;
+              }
+            }
+            & .td-submit {
+              height: 60px;
+              & input {
+                @extend %card-button;
+                border: 0;
+                cursor: pointer;
+                font-family: $font-inter;
+                font-size: 16px;
+                font-weight: 700;
+                letter-spacing: 0.025em;
+                max-width: 140px;
+                outline: none;
+                padding: 20px 15px;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    & .subtitle {
+      color: $font-color;
+      font-family: $font-rubik;
+      font-size: 20px;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+    & .title {
+      color: $font-color;
+      font-family: $font-viga;
+      font-size: 32px;
+      letter-spacing: 0.05em;
+      margin: 5px 0 15px;
+      text-transform: uppercase;
+    }
+    & .text {
+      color: $font-color;
+      font-size: 18px;
+      line-height: 25px;
+      text-align: justify;
+
+      & .marked {
+        color: $color-green-light;
+        font-style: italic;
+        font-weight: 600;
+      }
+    }
+  }
 }
