@@ -11,6 +11,10 @@
         }
       }
     }
+
+    & .main-home{
+      display: block;
+    }
   }
   &.space {
     & .header {
@@ -36,6 +40,9 @@
           display: flex;
         }
       }
+    }
+    & .main-intelligence{
+      display: block;
     }
   }
   &.ships {

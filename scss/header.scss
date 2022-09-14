@@ -21,25 +21,8 @@
         height: inherit;
         width: 100%;
         & .nav-list-item {
+          @include underline-animate(start, 50%, -10px);
           position: relative;
-          &:hover {
-            &::after {
-              width: 50%;
-            }
-          }
-          &::after {
-            @extend %after-before;
-            background-image: linear-gradient(
-              to right,
-              $color-green-dark 25%,
-              $color-green-light 75%
-            );
-            bottom: -10px;
-            height: 2px;
-            position: absolute;
-            transition: 0.3s;
-            width: 0;
-          }
           & .text {
             color: $font-color;
             font-weight: bold;
@@ -89,7 +72,7 @@
 
       & .header-info-content {
         display: none;
-        max-width: 480px;
+        max-width: 584px;
         &.intelligence, &.ships {
           align-items: center;
           gap: 50px;
@@ -181,7 +164,7 @@
         }
         &::after {
           @extend %after-before;
-          content: url(../img/arrow-bottom.svg);
+          content: url(../img/arrow-bottom.svg) !important;
           left: calc(50%);
           top: calc(50% + 8px);
           transform: translate(-50%, -50%);

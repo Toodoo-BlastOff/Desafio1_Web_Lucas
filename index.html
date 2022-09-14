@@ -12,7 +12,7 @@
   <title>Desafio Toodoo 1 | Lucas Silva</title>
 </head>
 <body>
-  <section class="all-container home">
+  <section class="all-container intelligence">
     <header class="header">
       <section class="header-bar">
         <nav class="header-bar-container">
@@ -78,7 +78,138 @@
     </header>
 
     <main class="main">
+      <section class="main-home">
+        <div class="birth-container">
+          <figure class="birth-image"><img src="img/astronaut.png" alt="astronauta"></figure>
+          <div class="birth-info">
+            <p class="subtitle">Como surgiu?</p>
+            <h3 class="title">Curiosidades</h3>
+            <p class="text">
+              Nascido com o objetivo de trazer informações de maneira simples e direta aos seus leitores, com temas diversificados e buscando sempre relacionar diferentes áreas. <br>
+              O projeto <span class="marked">Curiosidades</span> da Toodoo, criado a partir do BlastOff, traz conteúdos escritos por professores, físicos, executivos, designers, desenvolvedores de software e hardware, especialistas no âmbito geral afim de de prover conteúdo de confiança e sempre atualizado.
+            </p>
+          </div>
+        </div>
+        <div class="come-learn-container">
+          <p class="subtitle">Venha aprender</p>
+          <h3 class="title">O que abordaremos?</h3>
+          <ul class="learn-cards-list">
+            <li class="learn-cards-item">
+              <figure class="figure"><img src="img/ship.png" alt="nave"></figure>
+              <h4 class="title">Astronomia</h4>
+              <p class="text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. ncididunt ut labore et dolore. 
+              </p>
+              <a class="card-item-button" href="#">
+                Quero conhecer
+              </a>
+            </li>
+            <li class="learn-cards-item">
+              <figure class="figure"><img src="img/globe.png" alt="nave"></figure>
+              <h4 class="title">Inteligência artificial</h4>
+              <p class="text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+              </p>
+              <a class="card-item-button" href="#">
+                Quero conhecer
+              </a>
+            </li>
+            <li class="learn-cards-item">
+              <figure class="figure"><img src="img/ship.png" alt="nave"></figure>
+              <h4 class="title">Astronomia</h4>
+              <p class="text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. ncididunt ut labore et dolore. 
+              </p>
+              <a class="card-item-button" href="#">
+                Quero conhecer
+              </a>
+            </li>
+            <li class="learn-cards-item">
+              <figure class="figure"><img src="img/globe.png" alt="nave"></figure>
+              <h4 class="title">Inteligência artificial</h4>
+              <p class="text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+              </p>
+              <a class="card-item-button" href="#">
+                Quero conhecer
+              </a>
+            </li>
+          </ul>
 
+        </div>
+        <div class="newsletter-container">
+          <p class="subtitle">Newsletter</p>
+          <h3 class="title">Quer receber mais conteúdos como este??</h3>
+          <p class="text">Assine nossa newsletter!</p>
+          <form action="" class="newsletter-form">
+            <table class="form-table">
+              <tr class="form-table-tr">
+                <td class="td-input"><input type="email" placeholder="Seu e-mail aqui!" required></td>
+                <td class="td-submit"><input type="submit" value="ASSINAR!"></td>
+              </tr>
+            </table>
+          </form>
+        </div>
+      </section>
+      <section class="main-intelligence">
+        <div class="about-container">
+          <div class="perceptron-container">
+            <div class="perceptron-info">
+              <p class="subtitle">Sobre</p>
+              <h3 class="title">Perceptron</h3>
+              <p class="text">
+                O Perceptron foi criado em 1958 por Rosenblatt, sendo a forma mais simples da configuração de uma rede neural artificial, uma vez que é constituída de uma única camada neural e de um único neurônio. A figura ao lado ilustra a rede Perceptron de única camada, onde podemos ter N entradas, mas apenas uma única saída com um valor de 0 e 1 ou de -1 e 1.
+
+              </p>
+            </div>
+            <figure class="perceptron-image"><img src="img/perceptron.png" alt="example"></figure>
+          </div>
+          <p class="text in-between">
+            O Perceptron de uma única camada é utilizado para dividir duas classes linearmente separáveis, apresentando erro para classes não linearmente separáveis (figura 3), onde se recomenda usar a rede Perceptron Multicamadas.
+          </p>
+          <div class="perceptron-container">
+            <figure class="perceptron-image">
+              <img src="img/linearly-separeble.png" alt="example">
+              <figcaption>Sistema linearmente separável</figcaption>
+            </figure>
+            <figure class="perceptron-image">
+              <img src="img/non-linearly-separeble.png" alt="example">
+              <figcaption>Sistema não linearmente separável</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="about-container">
+          <div class="perceptron-container">
+            <div class="perceptron-info">
+              <h3 class="title">Perceptron</h3>
+              <p class="text">
+                A rede Adaline (Adaptive Linear Element) proposta por Widrow e Hoff (1960) tem a mesma estrutura do Perceptron, diferenciando apenas no algoritmo de treinamento.
+                <br><br>
+                A figura ao lado ilustra uma rede Adaline com n sinais de entrada (x1…xn) e uma única saída (y). Na Adaline é proposto a inclusão de um bloco de sinal de erro com o intuito de modificar os valores dos pesos antes de se
+                submeter a função de ativação (g). Note também que ilustra apenas um neurônio.
+
+              </p>
+            </div>
+            <figure class="perceptron-image"><img src="img/perceptron-2.png" alt="example"></figure>
+          </div>
+          <p class="text in-between">
+            O processo de treinamento da rede Adaline procura mover continuamente o vetor de pesos buscando minimizar o erro quadrático em relação as amostras de dados disponíveis para aprendizado.
+          </p>
+          <div class="perceptron-container long">
+            <figure class="perceptron-image">
+              <img src="img/adaline-2.png" alt="example">
+            </figure>
+          </div>
+        </div>
+        <div class="about-container">
+          <h3 class="title">Perceptron</h3>
+          <p class="text">
+            A inteligência artificial, principalemente as redes neurais são amplamente utilizados na ciência de dados, seja em bancos financeiros, jogos, estatísticas, robótica, áreas de automação industrial e no espaço. Reconhecimentos de imagens, controles de foguetes e lançamentos. 
+            <br><br>
+            Uma utilização bastante comum das redes neurais são aplicadas aos cálculos de ajuste do lançador de foguetes, inclusive, você pode consultar alguns lançamentos e foguetes clicando <a href="#" class="marked">aqui</a>
+          </p>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
