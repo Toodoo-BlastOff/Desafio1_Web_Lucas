@@ -12,7 +12,7 @@
       }
     }
 
-    & .main-home{
+    & .main-home {
       display: block;
     }
   }
@@ -28,6 +28,9 @@
         }
       }
     }
+    & .main-space {
+      display: block;
+    }
   }
   &.intelligence {
     & .header {
@@ -41,7 +44,7 @@
         }
       }
     }
-    & .main-intelligence{
+    & .main-intelligence {
       display: block;
     }
   }

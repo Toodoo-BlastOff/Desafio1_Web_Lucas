@@ -96,6 +96,7 @@
           & .title {
             font-size: 18px;
             margin: 16px 0;
+            line-height: 24px;
           }
           & .text {
             font-size: 14px;
@@ -238,6 +239,113 @@
           @include underline-animate(center, 75%, 0);
           display: inline-block;
           position: relative;
+        }
+      }
+    }
+  }
+
+  & .main-space {
+    @extend %appear;
+    & .main-space-container {
+      @extend %container;
+      & .last-releases-content,
+      & .releases-content {
+        & .last-releases-info {
+          & .title {
+            margin-bottom: 25px;
+            width: 415px;
+          }
+        }
+        & .last-releases-list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+          justify-content: center;
+          & .last-release-item {
+            height: 285px;
+            position: relative;
+            width: 260px;
+            &::before {
+              @extend %after-before;
+              @extend %bg-glass;
+              bottom: 0;
+              height: 235px;
+              left: 0;
+              position: absolute;
+              width: 260px;
+              z-index: -1;
+            }
+
+            & .card-image {
+              @include square(133px);
+              margin: 0 auto;
+            }
+            & .ship-status {
+              color: $color-green-light;
+              font-family: $font-rubik;
+              font-size: 14px;
+              font-weight: 300;
+              line-height: 17px;
+              margin: 15px 0 7px;
+              text-align: center;
+              text-transform: uppercase;
+            }
+            & .name {
+              color: $font-color;
+              font-family: $font-viga;
+              font-size: 18px;
+              font-weight: 400;
+              letter-spacing: 0.05em;
+              line-height: 24px;
+              margin-bottom: 16px;
+              text-align: center;
+              text-transform: uppercase;
+            }
+            & .ship-info {
+              color: $font-color;
+              font-size: 14px;
+              font-weight: 400;
+              letter-spacing: 0.025em;
+              line-height: 22px;
+              text-align: center;
+            }
+          }
+        }
+      }
+      & .releases-content {
+        margin-top: 150px;
+        & .last-releases-info {
+          & .title {
+            margin: 0 auto 25px;
+            width: fit-content;
+          }
+        }
+        & .last-releases-list {
+          & .last-release-item {
+            cursor: pointer;
+            &.status-inactive {
+              cursor: initial;
+              & .status-active {
+                display: none !important;
+              }
+              & .status-inactive {
+                display: block !important;
+              }
+            }
+            & .button {
+              @extend %card-button;
+              border: solid 1px $color-green-light;
+              margin: 22px auto 0;
+              max-width: 205px;
+              &.status-inactive {
+                background-image: none;
+                border: solid 1px $color-green-dark;
+                color: $color-green-dark;
+                cursor: context-menu;
+                display: none;
+              }
+            }
+          }
         }
       }
     }
