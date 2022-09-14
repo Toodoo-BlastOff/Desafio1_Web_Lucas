@@ -57,6 +57,7 @@ $font-viga: "Viga", sans-serif;
 }
 %appear {
   animation: appear 1s 1 both;
+  display: none;
   @keyframes appear {
     from {
       opacity: 0;
