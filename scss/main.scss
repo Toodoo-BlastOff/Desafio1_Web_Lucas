@@ -1,8 +1,10 @@
 // limao
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Viga&display=swap");
+// end import's
 
-$bg-header-footer: #0c0c0c;
+// Variables
 $bg-header-footer-08: #0c0c0cee;
+$bg-header-footer: #0c0c0c;
 $color-blue: #090e6c;
 $color-green-dark: #01ac8b;
 $color-green-light: #01eabd;
@@ -11,7 +13,9 @@ $font-color: #fff;
 $font-inter: "Inter", sans-serif;
 $font-rubik: "Rubik", sans-serif;
 $font-viga: "Viga", sans-serif;
+// end variables
 
+// Mixin's
 @mixin media($width) {
   @media screen and (max-width: $width) {
     @content;
@@ -22,22 +26,30 @@ $font-viga: "Viga", sans-serif;
   width: $size;
 }
 
-%bg-glass {
-  backdrop-filter: blur(13px);
-  background-image: linear-gradient(
-    135deg,
-    rgb(88, 88, 88, 75%),
-    rgb(97, 97, 97, 10%) 85%
-  );
-  border-radius: 15px;
-  border: solid 2px #505050;
+@mixin underline-animate($align, $width, $bottom) {
+  &:hover {
+    &::after {
+      width: $width;
+    }
+  }
+  &::after {
+    @extend %after-before;
+    background-image: linear-gradient(90deg,$color-green-dark 25%,$color-green-light 75%);
+    bottom: $bottom;
+    height: 2px;
+    position: absolute;
+    transition: 0.3s;
+    width: 0;
+    @if $align == center {
+      left: 50%;
+      transform: translateX(-50%);
+    } @else if $align == end {
+      right: 0;
+    }
+  }
 }
-%container {
-  height: inherit;
-  margin: auto;
-  max-width: 1100px;
-  width: calc(100% - 340px);
-}
+
+// Placeholder's
 %after-before {
   content: "";
   display: block;
@@ -52,6 +64,16 @@ $font-viga: "Viga", sans-serif;
       opacity: 1;
     }
   }
+}
+%bg-glass {
+  backdrop-filter: blur(13px);
+  background-image: linear-gradient(
+    135deg,
+    rgb(88, 88, 88, 75%),
+    rgb(97, 97, 97, 10%) 85%
+  );
+  border-radius: 15px;
+  border: solid 2px #505050;
 }
 %card-button {
   background-image: linear-gradient(
@@ -69,6 +91,12 @@ $font-viga: "Viga", sans-serif;
   text-align: center;
   text-transform: uppercase;
 }
+%container {
+  height: inherit;
+  margin: auto;
+  max-width: 1100px;
+  width: calc(100% - 340px);
+}
 // end limao - apagar
 
 .all-container {
@@ -79,6 +107,36 @@ $font-viga: "Viga", sans-serif;
 .main {
   background-color: #000;
   padding: 75px 0 150px;
+  & .subtitle {
+    color: $font-color;
+    font-family: $font-rubik;
+    font-size: 20px;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  & .title {
+    color: $font-color;
+    font-family: $font-viga;
+    font-size: 32px;
+    letter-spacing: 0.05em;
+    margin: 5px 0 15px;
+    line-height: 43px;
+    text-transform: uppercase;
+  }
+  & .text {
+    color: $font-color;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: justify;
+    letter-spacing: 0.025em;
+
+    & .marked {
+      color: $color-green-light;
+      font-style: italic;
+      font-weight: 600;
+    }
+  }
+
   & .main-home {
     @extend %appear;
     display: none;
@@ -130,7 +188,6 @@ $font-viga: "Viga", sans-serif;
         & .learn-cards-item {
           @extend %bg-glass;
           padding: 37px 27px 16px;
-          height: 300px;
           position: relative;
           width: 260px;
           z-index: 2;
@@ -177,7 +234,7 @@ $font-viga: "Viga", sans-serif;
         & .form-table {
           display: block;
           width: 100%;
-          & tbody{
+          & tbody {
             display: block;
             width: 100%;
           }
@@ -223,32 +280,66 @@ $font-viga: "Viga", sans-serif;
         }
       }
     }
+  }
 
-    & .subtitle {
-      color: $font-color;
-      font-family: $font-rubik;
-      font-size: 20px;
-      font-weight: 300;
-      text-transform: uppercase;
-    }
+  & .main-intelligence {
+    @extend %appear;
     & .title {
-      color: $font-color;
-      font-family: $font-viga;
-      font-size: 32px;
-      letter-spacing: 0.05em;
-      margin: 5px 0 15px;
-      text-transform: uppercase;
+      line-height: 43px;
     }
-    & .text {
-      color: $font-color;
-      font-size: 18px;
-      line-height: 25px;
-      text-align: justify;
+    & .about-container {
+      @extend %container;
+      &:nth-child(2) {
+        margin-top: 120px;
 
-      & .marked {
-        color: $color-green-light;
-        font-style: italic;
-        font-weight: 600;
+        & .perceptron-container {
+          align-items: center;
+        }
+      }
+      & .perceptron-container {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 38px;
+        justify-content: center;
+        &.long {
+          display: block;
+          margin-bottom: 120px;
+          & .perceptron-image {
+            max-width: initial;
+          }
+        }
+        & .perceptron-info {
+          max-width: 538px;
+        }
+        & .perceptron-image {
+          max-width: 524px;
+          overflow: hidden;
+
+          & img {
+            border-radius: 31px;
+          }
+          & figcaption {
+            color: $font-color;
+            font-size: 18px;
+            font-style: italic;
+            font-weight: 600;
+            letter-spacing: 0.025em;
+            margin-top: 15px;
+            text-align: center;
+          }
+        }
+      }
+      & .text.in-between {
+        margin: 70px 0 40px;
+        text-align: justified;
+      }
+      & .text{
+        & .marked{
+          @include underline-animate(center, 75%, 0);
+          display: inline-block;
+          position: relative;
+        }
       }
     }
   }
