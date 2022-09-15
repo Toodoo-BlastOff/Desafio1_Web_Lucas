@@ -1,4 +1,5 @@
 const allContainer = document.querySelector(".all-container");
+const buttonScrollDown = document.querySelector('.scroll-down-button')
 const buttonsNavigation = document.querySelectorAll(".nav-list .nav-list-item");
 const pagesNavigation = ["ships"];
 buttonsNavigation.forEach((button) => {
@@ -13,6 +14,14 @@ function navigateMenu(currentPage) {
   allContainer.classList.add(currentPage);
 }
 
+function scrollToMain(){
+  const top = document.querySelector('.main').offsetTop;
+  window.scroll({
+    top: top - 100,
+    behavior: "smooth",
+  })
+}
+
 buttonsNavigation.forEach((button) => {
   button.addEventListener("click", (e) => {
     e.preventDefault();
@@ -20,3 +29,5 @@ buttonsNavigation.forEach((button) => {
     navigateMenu(page);
   });
 });
+
+buttonScrollDown.addEventListener('click', scrollToMain)

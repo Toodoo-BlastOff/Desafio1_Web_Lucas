@@ -2,7 +2,14 @@
   &.home {
     & .header {
       & .header-info {
+        @extend %appear;
+        display: flex;
+        animation-duration: .15s;
         background-image: url(../img/bg-screen-home.png);
+        & .scroll-down {
+          @extend %appear;
+          display: block;
+        }
       }
       & .header-info-content {
         &.home {
@@ -12,14 +19,21 @@
       }
     }
 
-    & .main-home{
+    & .main-home {
       display: block;
     }
   }
   &.space {
     & .header {
       & .header-info {
+        @extend %appear;
+        animation-duration: .15s;
         background-image: url(../img/bg-screen-space.png);
+        display: flex;
+        & .scroll-down {
+          @extend %appear;
+          display: block;
+        }
       }
       & .header-info-content {
         &.space {
@@ -27,6 +41,9 @@
           display: block;
         }
       }
+    }
+    & .main-space {
+      display: block;
     }
   }
   &.intelligence {
@@ -41,7 +58,7 @@
         }
       }
     }
-    & .main-intelligence{
+    & .main-intelligence {
       display: block;
     }
   }
