@@ -256,7 +256,7 @@
             width: 415px;
           }
         }
-        & .last-releases-list {
+        & .last-releases-list, & .releases-list {
           display: flex;
           flex-wrap: wrap;
           gap: 20px;
@@ -320,7 +320,7 @@
             width: fit-content;
           }
         }
-        & .last-releases-list {
+        & .last-releases-list, & .releases-list {
           & .last-release-item {
             cursor: pointer;
             &.status-inactive {

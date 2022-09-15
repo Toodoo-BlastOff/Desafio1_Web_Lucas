@@ -2,7 +2,6 @@
   background-color: $bg-header-footer;
   padding-top: 100px;
   position: relative;
-
   & .header-bar {
     background-color: $bg-header-footer-08;
     height: 100px;
@@ -36,7 +35,6 @@
       }
     }
   }
-
   & .header-info {
     align-items: center;
     background-image: url(../img/bg-screen-home.png);
@@ -62,14 +60,12 @@
       top: 0;
       width: 100%;
     }
-
     & .header-info-container {
       @extend %container;
       margin: 0 auto;
       margin-top: -150px;
       position: relative;
       z-index: 1;
-
       & .header-info-content {
         display: none;
         max-width: 584px;
@@ -89,7 +85,6 @@
             max-width: 350px;
           }
         }
-
         & .title {
           color: $font-color;
           font-family: $font-viga;
@@ -113,7 +108,6 @@
           line-height: 25px;
           text-align: left;
         }
-
         & .blastoff-logo {
           margin-top: 25px;
           width: 150px;
@@ -123,11 +117,10 @@
     & .scroll-down {
       bottom: 120px;
       left: 50%;
-      position: absolute;
       margin: auto;
+      position: absolute;
       transform: translate(-50%, 0);
       z-index: 1;
-
       & .text {
         margin-left: 10px;
         color: $font-color;
@@ -139,7 +132,6 @@
         text-align: center;
         text-transform: uppercase;
       }
-
       & .scroll-down-button {
         border-radius: 50%;
         border: solid 2px $font-color;
