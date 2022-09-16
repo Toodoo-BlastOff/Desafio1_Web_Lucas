@@ -7,6 +7,16 @@ class AstronomyCard {
     this.date = date;
     this.status = status;
   }
+  insertEvents(){
+    this.nodeCard.addEventListener('click',(event)=>{
+      event.preventDefault();
+      navigateMenu('ships');
+      window.scrollTo({
+        top: 100,
+        behavior : "smooth",
+      })
+    })
+  }
   createLaucherCard() {
     const card = `
     <li class="last-release-item">
@@ -21,9 +31,9 @@ class AstronomyCard {
     `;
     lastReleasesList.insertAdjacentHTML("beforeend", card);
   }
-  createRocketsCard() {
+  createRocketsCard(index) {
     const card = `
-    <li class="last-release-item ${this.status ? "" : "status-inactive"}">
+    <li class="last-release-item ${this.status ? "" : "status-inactive"}" rocketIndex="${index}">
       <figure class="card-image">
         <img src="${this.image}" alt="${this.name}">
       </figure>
@@ -34,8 +44,22 @@ class AstronomyCard {
     </li>
     `;
     releasesRocketList.insertAdjacentHTML("beforeend", card);
+    this.nodeCard = document.querySelector(`[rocketIndex="${index}"]`);
+    this.insertEvents();
   }
 }
+
+class RocketInfo{
+  constructor(rocket, laucher){
+    this.rocket = rocket;
+    this.laucher = laucher;
+  }
+
+  async showInfo(){
+
+  }
+}
+
 async function fetchLaunchers() {
   const url = "https://api.spacexdata.com/v3/launches";
   const data = await (await fetch(url)).json();
@@ -53,11 +77,13 @@ async function fetchLaunchers() {
 }
 
 async function fetchRockets(dataLaunchers) {
-  function locateLaunch(rocketId) {
+  function locateLaunch(rocketId , index) {
     let obj;
     for (let i = 0; i < dataLaunchers.length; i++) {
       if (rocketId == dataLaunchers[i].rocket.rocket_id) {
         obj = dataLaunchers[i];
+        rocketInfo.push(new RocketInfo( i , index));
+
         break;
       }
     }
@@ -67,18 +93,21 @@ async function fetchRockets(dataLaunchers) {
   const data = await (await fetch(url)).json();
   for (let i = 0; i <= 2; i++) {
     const obj = data[i];
-    const objLaunch = locateLaunch(obj.rocket_id);
+    const objLaunch = locateLaunch(obj.rocket_id, i);
     const image = objLaunch.links.mission_patch || objLaunch.links.mission_patch;
     const name = objLaunch.rocket.rocket_name;
     const type = obj.rocket_type;
     const status = obj.active;
     const id = obj.id;
     const card = new AstronomyCard(image, type, name, id, null, status);
-    card.createRocketsCard();
+    card.createRocketsCard(i);
   }
+  
 }
 
 const lastReleasesList = document.querySelector(".last-releases-list");
 const releasesRocketList = document.querySelector(".releases-list");
+const rocketInfo = [];
+
 
 fetchLaunchers();
