@@ -101,7 +101,7 @@ $font-viga: "Viga", sans-serif;
   height: inherit;
   margin: auto;
   max-width: 1100px;
-  width: calc(100% - 300px);
+  width: calc(100% - 100px);
 }
 %flex-container {
   display: flex;
@@ -119,7 +119,10 @@ $font-viga: "Viga", sans-serif;
   & [class$="-info"] {
     max-width: 538px;
   }
-  & [class$="-image"] {
+  & [class$="-image"],
+  [class$="-video"] {
+    width: 100%;
+    height: inherit;
     max-width: 524px;
     overflow: hidden;
 
