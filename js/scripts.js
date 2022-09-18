@@ -136,36 +136,29 @@ const allContainer = document.querySelector(".all-container");
 const buttonScrollDown = document.querySelector(".scroll-down-button");
 const buttonsNavigation = document.querySelectorAll(".nav-list .nav-list-item");
 const pagesNavigation = ["ships"];
+
+const lastReleasesList = document.querySelector(".last-releases-list");
+const releasesRocketList = document.querySelector(".releases-list");
+const learnCards = document.querySelectorAll(".learn-cards-item .card-item-button");
+const rocketInfo = [];
+
+const headerRocketImg = document.querySelector(".ships-image img");
+const headerRocketName = document.querySelector(".ships-info .title");
+const mainRocketTitle = document.querySelector(".main-ships-container .title");
+const mainRocketInfo = document.querySelector(".main-ships-container .text");
+const mainRocketImg = document.querySelector(".main-ships-container .rocket-image img");
+const tdDate = document.querySelector(".tr-content.launch-date .text");
+const tdSite = document.querySelector(".tr-content.launch-site .text");
+const tdStatus = document.querySelector(".tr-content.launch-status .text");
+const tdType = document.querySelector(".tr-content.type .text");
+const tdFirstStage = document.querySelector(".tr-content.first-stage .text");
+const tdSecondStage = document.querySelector(".tr-content.second-stage .text");
+const tdDetails = document.querySelector(".tr-content.details .text");
+
+const rocketVideoContainer = document.querySelector(".rocket-video").parentNode;
 buttonsNavigation.forEach((button) => {
   pagesNavigation.push(button.getAttribute("page"));
 });
-
-function navigateMenu(currentPage) {
-  pagesNavigation.forEach((page) => {
-    const oldPage = document.querySelector(`.all-container.${page}`);
-    oldPage ? oldPage.classList.remove(page) : "";
-  });
-  allContainer.classList.add(currentPage);
-}
-
-function scrollToMain() {
-  const top = document.querySelector(".main").offsetTop;
-  window.scroll({
-    top: top - 100,
-    behavior: "smooth",
-  });
-}
-
-buttonsNavigation.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    e.preventDefault();
-    const page = button.getAttribute("page");
-    navigateMenu(page);
-  });
-});
-
-buttonScrollDown.addEventListener("click", scrollToMain);
-
 
 async function fetchLaunchers() {
   const url = "https://api.spacexdata.com/v3/launches";
@@ -211,6 +204,19 @@ async function fetchRockets(dataLaunchers) {
   }
 }
 
+function navigateMenu(currentPage) {
+  pagesNavigation.forEach((page) => {
+    const oldPage = document.querySelector(`.all-container.${page}`);
+    oldPage ? oldPage.classList.remove(page) : "";
+  });
+  allContainer.classList.add(currentPage);
+}
+
+function scrollToMain() {
+  const top = document.querySelector(".main").offsetTop;
+  scrollToY(top - 100);
+}
+
 function scrollToY(y) {
   window.scrollTo({
     top: y,
@@ -218,27 +224,15 @@ function scrollToY(y) {
   });
 }
 
-const lastReleasesList = document.querySelector(".last-releases-list");
-const releasesRocketList = document.querySelector(".releases-list");
-const learnCards = document.querySelectorAll(".learn-cards-item .card-item-button");
-const rocketInfo = [];
+buttonsNavigation.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    const page = button.getAttribute("page");
+    navigateMenu(page);
+  });
+});
 
-const headerRocketImg = document.querySelector(".ships-image img");
-const headerRocketName = document.querySelector(".ships-info .title");
-const mainRocketTitle = document.querySelector(".main-ships-container .title");
-const mainRocketInfo = document.querySelector(".main-ships-container .text");
-const mainRocketImg = document.querySelector(".main-ships-container .rocket-image img");
-const tdDate = document.querySelector(".tr-content.launch-date .text");
-const tdSite = document.querySelector(".tr-content.launch-site .text");
-const tdStatus = document.querySelector(".tr-content.launch-status .text");
-const tdType = document.querySelector(".tr-content.type .text");
-const tdFirstStage = document.querySelector(".tr-content.first-stage .text");
-const tdSecondStage = document.querySelector(".tr-content.second-stage .text");
-const tdDetails = document.querySelector(".tr-content.details .text");
-
-const rocketVideoContainer = document.querySelector(".rocket-video").parentNode;
-
-console.log(rocketVideoContainer);
+buttonScrollDown.addEventListener("click", scrollToMain);
 
 fetchLaunchers();
 
@@ -246,7 +240,6 @@ learnCards.forEach((card) => {
   card.addEventListener("click", (e) => {
     e.preventDefault();
     navigateMenu(card.parentNode.getAttribute("page"));
-    debugger;
     scrollToY(100);
   });
 });
