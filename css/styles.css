@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Viga&display=swap");
-.main .main-space .main-space-container .last-releases-content .last-releases-list .last-release-item::before, .main .main-space .main-space-container .last-releases-content .releases-list .last-release-item::before, .main .main-space .main-space-container .releases-content .last-releases-list .last-release-item::before, .main .main-space .main-space-container .releases-content .releases-list .last-release-item::before, .main .main-intelligence .about-container .text .marked::after, .main .main-home .come-learn-container .learn-cards-list::before, .header .header-info .scroll-down .scroll-down-button::after, .header .header-info .scroll-down .scroll-down-button::before, .header .header-info::before, .header .header-info::after, .header .header-bar .header-bar-container .nav-list .nav-list-item::after {
+.main .main-ships .rocket-table-container .rocket-table .tbody .tr-content::before, .main .main-ships .main-ships-container .rocket-video .video-paused .play-button::after, .main .main-ships .main-ships-container .rocket-video .video-paused:before, .main .main-intelligence .about-container .text .marked::after, .main .main-space .main-space-container .last-releases-content .last-releases-list .last-release-item::before, .main .main-space .main-space-container .last-releases-content .releases-list .last-release-item::before, .main .main-space .main-space-container .releases-content .last-releases-list .last-release-item::before, .main .main-space .main-space-container .releases-content .releases-list .last-release-item::before, .main .main-home .newsletter-container::before, .main .main-home .come-learn-container .learn-cards-list::before, .header .header-info .scroll-down .scroll-down-button::after, .header .header-info .scroll-down .scroll-down-button::before, .header .header-info::before, .header .header-info::after, .header .header-bar .header-bar-container .nav-list .nav-list-item::after {
   content: "";
   display: block;
 }
 
-.all-container.ships .header .header-info-content.ships, .all-container.intelligence .header .header-info-content.intelligence, .all-container.space .header .header-info-content.space, .all-container.space .header .header-info .scroll-down, .all-container.space .header .header-info, .all-container.home .header .header-info-content.home, .all-container.home .header .header-info .scroll-down, .all-container.home .header .header-info, .main .main-space, .main .main-intelligence, .main .main-home {
+.all-container.ships .header .header-info-content.ships, .all-container.intelligence .header .header-info-content.intelligence, .all-container.space .header .header-info-content.space, .all-container.space .header .header-info .scroll-down, .all-container.space .header .header-info, .all-container.home .header .header-info-content.home, .all-container.home .header .header-info .scroll-down, .all-container.home .header .header-info, .main .main-ships, .main .main-intelligence, .main .main-space, .main .main-home {
   animation: appear 1s 1 both;
   display: none;
 }
@@ -24,7 +24,7 @@
   border: solid 2px #505050;
 }
 
-.main .main-space .main-space-container .releases-content .last-releases-list .last-release-item .button, .main .main-space .main-space-container .releases-content .releases-list .last-release-item .button, .main .main-home .newsletter-container .newsletter-form .form-table .form-table-tr .td-submit input, .main .main-home .come-learn-container .learn-cards-list .learn-cards-item .card-item-button {
+.main .main-space .main-space-container .releases-content .last-releases-list .last-release-item .button, .main .main-space .main-space-container .releases-content .releases-list .last-release-item .button, .main .main-home .newsletter-container .newsletter-form .form-table .form-table-tr .td-submit input, .main .main-home .newsletter-container .newsletter-form .form-table .form-table-tr .td-submit, .main .main-home .come-learn-container .learn-cards-list .learn-cards-item .card-item-button {
   background-image: linear-gradient(90deg, #01eabd, #01ac8b);
   border-radius: 5px;
   color: #fff;
@@ -37,11 +37,53 @@
   text-transform: uppercase;
 }
 
-.footer .footer-container, .main .main-space .main-space-container, .main .main-intelligence .about-container, .main .main-home .newsletter-container, .main .main-home .come-learn-container, .main .main-home .birth-container, .header .header-info .header-info-container, .header .header-bar .header-bar-container {
+.footer .footer-container, .main .main-ships .rocket-table-container, .main .main-ships .main-ships-container, .main .main-intelligence .about-container, .main .main-space .main-space-container, .main .main-home .newsletter-container, .main .main-home .come-learn-container, .main .main-home .birth-container, .header .header-info .header-info-container, .header .header-bar .header-bar-container {
   height: inherit;
   margin: auto;
   max-width: 1100px;
-  width: calc(100% - 340px);
+  width: calc(100% - 100px);
+}
+
+.main .main-ships .main-ships-container, .main .main-intelligence .about-container .perceptron-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 38px;
+  justify-content: center;
+  align-items: center;
+}
+.main .main-ships .long.main-ships-container, .main .main-intelligence .about-container .long.perceptron-container {
+  display: block;
+  margin-bottom: 120px;
+}
+.main .main-ships .long.main-ships-container .perceptron-image, .main .main-intelligence .about-container .long.perceptron-container .perceptron-image {
+  max-width: initial;
+}
+.main .main-ships .main-ships-container [class$=-info], .main .main-intelligence .about-container .perceptron-container [class$=-info] {
+  max-width: 538px;
+}
+.main .main-ships .main-ships-container [class$=-image], .main .main-intelligence .about-container .perceptron-container [class$=-image],
+.main .main-ships .main-ships-container [class$=-video],
+.main .main-intelligence .about-container .perceptron-container [class$=-video] {
+  width: 100%;
+  height: inherit;
+  max-width: 524px;
+  overflow: hidden;
+}
+.main .main-ships .main-ships-container [class$=-image] img, .main .main-intelligence .about-container .perceptron-container [class$=-image] img,
+.main .main-ships .main-ships-container [class$=-video] img,
+.main .main-intelligence .about-container .perceptron-container [class$=-video] img {
+  border-radius: 31px;
+}
+.main .main-ships .main-ships-container [class$=-image] figcaption, .main .main-intelligence .about-container .perceptron-container [class$=-image] figcaption,
+.main .main-ships .main-ships-container [class$=-video] figcaption,
+.main .main-intelligence .about-container .perceptron-container [class$=-video] figcaption {
+  color: #fff;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  margin-top: 15px;
+  text-align: center;
 }
 
 .header {
@@ -136,6 +178,9 @@
   height: 450px;
   overflow: hidden;
   width: 450px;
+}
+.header .header-info .header-info-container .header-info-content.intelligence .neural-networks-image img, .header .header-info .header-info-container .header-info-content.intelligence .ships-image img, .header .header-info .header-info-container .header-info-content.ships .neural-networks-image img, .header .header-info .header-info-container .header-info-content.ships .ships-image img {
+  min-height: 100%;
 }
 .header .header-info .header-info-container .header-info-content.intelligence .neural-network-info, .header .header-info .header-info-container .header-info-content.ships .neural-network-info {
   max-width: 350px;
@@ -268,6 +313,11 @@
   margin-bottom: 150px;
   row-gap: 40px;
 }
+@media screen and (max-width: 980px) {
+  .main .main-home .birth-container {
+    flex-direction: column;
+  }
+}
 .main .main-home .birth-container .birth-image {
   border-radius: 30px;
   max-width: 510px;
@@ -278,7 +328,7 @@
   max-width: calc(100% - 560px);
   width: 100%;
 }
-@media screen and (max-width: 1399px) {
+@media screen and (max-width: 980px) {
   .main .main-home .birth-container .birth-info {
     max-width: initial;
   }
@@ -293,15 +343,14 @@
   position: relative;
 }
 .main .main-home .come-learn-container .learn-cards-list::before {
-  height: 150px;
-  width: 150px;
+  height: 143px;
+  width: 143px;
   background-color: #01eabd;
   border-radius: 50%;
-  bottom: 0;
+  bottom: -87px;
   filter: blur(185px);
-  left: 0;
+  left: -71px;
   position: absolute;
-  transform: translate(-50%, 50%);
 }
 .main .main-home .come-learn-container .learn-cards-list .learn-cards-item {
   padding: 37px 27px 16px;
@@ -328,6 +377,17 @@
 .main .main-home .newsletter-container {
   height: 390px;
   padding: 50px;
+  position: relative;
+}
+.main .main-home .newsletter-container::before {
+  height: 143px;
+  width: 143px;
+  background-color: #01eabd;
+  border-radius: 50%;
+  bottom: -17px;
+  filter: blur(185px);
+  position: absolute;
+  right: -17px;
 }
 .main .main-home .newsletter-container .title, .main .main-home .newsletter-container .subtitle, .main .main-home .newsletter-container .text {
   margin: auto;
@@ -353,7 +413,7 @@
 }
 .main .main-home .newsletter-container .newsletter-form .form-table .form-table-tr {
   background-color: #565656;
-  border-radius: 16px;
+  border-radius: 6px;
   border: solid 1px #01eabd;
   display: flex;
   justify-content: space-between;
@@ -375,6 +435,7 @@
 }
 .main .main-home .newsletter-container .newsletter-form .form-table .form-table-tr .td-submit {
   height: 60px;
+  padding: 0;
 }
 .main .main-home .newsletter-container .newsletter-form .form-table .form-table-tr .td-submit input {
   border: 0;
@@ -385,71 +446,15 @@
   letter-spacing: 0.025em;
   max-width: 140px;
   outline: none;
-  padding: 20px 15px;
+  padding: 20px 29px;
   width: 100%;
 }
-.main .main-intelligence .title {
-  line-height: 43px;
-}
-.main .main-intelligence .about-container:nth-child(2) {
-  margin-top: 120px;
-}
-.main .main-intelligence .about-container:nth-child(2) .perceptron-container {
-  align-items: center;
-}
-.main .main-intelligence .about-container .perceptron-container {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 38px;
-  justify-content: center;
-}
-.main .main-intelligence .about-container .perceptron-container.long {
-  display: block;
-  margin-bottom: 120px;
-}
-.main .main-intelligence .about-container .perceptron-container.long .perceptron-image {
-  max-width: initial;
-}
-.main .main-intelligence .about-container .perceptron-container .perceptron-info {
-  max-width: 538px;
-}
-.main .main-intelligence .about-container .perceptron-container .perceptron-image {
-  max-width: 524px;
-  overflow: hidden;
-}
-.main .main-intelligence .about-container .perceptron-container .perceptron-image img {
-  border-radius: 31px;
-}
-.main .main-intelligence .about-container .perceptron-container .perceptron-image figcaption {
-  color: #fff;
-  font-size: 18px;
+.main .main-home .newsletter-container .newsletter-form + .below {
+  font-size: 12px;
   font-style: italic;
   font-weight: 600;
   letter-spacing: 0.025em;
-  margin-top: 15px;
   text-align: center;
-}
-.main .main-intelligence .about-container .text.in-between {
-  margin: 70px 0 40px;
-  text-align: justified;
-}
-.main .main-intelligence .about-container .text .marked {
-  display: inline-block;
-  position: relative;
-}
-.main .main-intelligence .about-container .text .marked:hover::after {
-  width: 75%;
-}
-.main .main-intelligence .about-container .text .marked::after {
-  background-image: linear-gradient(90deg, #01ac8b 25%, #01eabd 75%);
-  bottom: 0;
-  height: 2px;
-  position: absolute;
-  transition: 0.3s;
-  width: 0;
-  left: 50%;
-  transform: translateX(-50%);
 }
 .main .main-space .main-space-container .last-releases-content .last-releases-info .title, .main .main-space .main-space-container .releases-content .last-releases-info .title {
   margin-bottom: 25px;
@@ -462,7 +467,7 @@
   justify-content: center;
 }
 .main .main-space .main-space-container .last-releases-content .last-releases-list .last-release-item, .main .main-space .main-space-container .last-releases-content .releases-list .last-release-item, .main .main-space .main-space-container .releases-content .last-releases-list .last-release-item, .main .main-space .main-space-container .releases-content .releases-list .last-release-item {
-  height: 285px;
+  min-height: 285px;
   position: relative;
   width: 260px;
 }
@@ -508,6 +513,9 @@
   line-height: 22px;
   text-align: center;
 }
+.main .main-space .main-space-container .last-releases-content .last-releases-list .last-release-item .ship-info.launch, .main .main-space .main-space-container .last-releases-content .releases-list .last-release-item .ship-info.launch, .main .main-space .main-space-container .releases-content .last-releases-list .last-release-item .ship-info.launch, .main .main-space .main-space-container .releases-content .releases-list .last-release-item .ship-info.launch {
+  padding-bottom: 28px;
+}
 .main .main-space .main-space-container .releases-content {
   margin-top: 150px;
 }
@@ -538,6 +546,238 @@
   color: #01ac8b;
   cursor: context-menu;
   display: none;
+}
+.main .main-intelligence .title {
+  line-height: 43px;
+}
+.main .main-intelligence .about-container:nth-child(2) {
+  margin-top: 120px;
+}
+.main .main-intelligence .about-container:nth-child(2) .perceptron-container {
+  align-items: center;
+}
+.main .main-intelligence .about-container:nth-child(2).long {
+  display: block;
+  margin-bottom: 120px;
+}
+.main .main-intelligence .about-container:nth-child(2).long .perceptron-image {
+  max-width: initial;
+}
+.main .main-intelligence .about-container:nth-child(2) .perceptron-info {
+  max-width: 538px;
+}
+.main .main-intelligence .about-container:nth-child(2) .perceptron-image {
+  max-width: 524px;
+  overflow: hidden;
+}
+.main .main-intelligence .about-container:nth-child(2) .perceptron-image img {
+  border-radius: 31px;
+}
+.main .main-intelligence .about-container:nth-child(2) .perceptron-image figcaption {
+  color: #fff;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  margin-top: 15px;
+  text-align: center;
+}
+.main .main-intelligence .about-container .text.in-between {
+  margin: 70px 0 40px;
+  text-align: justified;
+}
+.main .main-intelligence .about-container .text .marked {
+  display: inline-block;
+  position: relative;
+}
+.main .main-intelligence .about-container .text .marked:hover::after {
+  width: 75%;
+}
+.main .main-intelligence .about-container .text .marked::after {
+  background-image: linear-gradient(90deg, #01ac8b 25%, #01eabd 75%);
+  bottom: 0;
+  height: 2px;
+  position: absolute;
+  transition: 0.3s;
+  width: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.main .main-ships .main-ships-container .rocket-video {
+  position: relative;
+  overflow: hidden;
+  border-radius: 31px;
+}
+.main .main-ships .main-ships-container .rocket-video .video-paused {
+  cursor: pointer;
+  left: 0;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.main .main-ships .main-ships-container .rocket-video .video-paused:before {
+  background-color: rgba(0, 0, 0, 0.3333333333);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: 0.3s;
+  width: 100%;
+}
+.main .main-ships .main-ships-container .rocket-video .video-paused:hover::before {
+  background-color: rgba(0, 0, 0, 0.6666666667);
+}
+.main .main-ships .main-ships-container .rocket-video .video-paused:hover .play-button {
+  opacity: 1;
+}
+.main .main-ships .main-ships-container .rocket-video .video-paused:hover .list-link {
+  opacity: 1;
+}
+.main .main-ships .main-ships-container .rocket-video .video-paused .play-button {
+  height: 74px;
+  width: 74px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  border: solid 5px #fff;
+  left: 50%;
+  opacity: 0.5;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+}
+.main .main-ships .main-ships-container .rocket-video .video-paused .play-button::after {
+  width: 20px;
+  content: url(../img/play.png);
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.main .main-ships .main-ships-container .rocket-video .video-paused .list-link {
+  bottom: 22px;
+  display: flex;
+  justify-content: space-between;
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  transform: translate(-50%);
+  transition: 0.6s;
+  width: calc(100% - 42px);
+}
+.main .main-ships .main-ships-container .rocket-video .video-paused .list-link li a {
+  align-items: center;
+  color: #fff;
+  column-gap: 10px;
+  display: flex;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+.main .main-ships .main-ships-container .rocket-video .video-paused .list-link li a figure {
+  width: fit-content;
+}
+.main .main-ships .main-ships-container .rocket-video .video-paused .list-link li a figure.youtube img {
+  width: 44.78px;
+}
+.main .main-ships .main-ships-container .rocket-video .video-paused .list-link li a figure.reddit img {
+  width: 31px;
+}
+.main .main-ships .main-ships-container .rocket-video .video-paused .list-link li a figure img {
+  height: 31px;
+  border-radius: 0;
+}
+.main .main-ships .rocket-table-container {
+  margin: 60px auto;
+}
+.main .main-ships .rocket-table-container .title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.main .main-ships .rocket-table-container .rocket-table {
+  background-color: #4f4f4f;
+  display: block;
+}
+.main .main-ships .rocket-table-container .rocket-table .tbody {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: hidden;
+  row-gap: 20px;
+}
+@media screen and (max-width: 920px) {
+  .main .main-ships .rocket-table-container .rocket-table .tbody {
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1px;
+  }
+}
+.main .main-ships .rocket-table-container .rocket-table .tbody .tr-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.main .main-ships .rocket-table-container .rocket-table .tbody .tr-content::before {
+  background-color: #3d3c3c;
+  display: block;
+  height: 24px;
+  left: 50%;
+  padding: 9px 0;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%);
+  width: 2000%;
+}
+@media screen and (max-width: 920px) {
+  .main .main-ships .rocket-table-container .rocket-table .tbody .tr-content {
+    flex-direction: row;
+  }
+  .main .main-ships .rocket-table-container .rocket-table .tbody .tr-content::before {
+    width: 0;
+  }
+}
+.main .main-ships .rocket-table-container .rocket-table .tbody .tr-content.launch-status .text.success {
+  color: #01ac8b;
+}
+.main .main-ships .rocket-table-container .rocket-table .tbody .tr-content .title {
+  background-color: #3d3c3c;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0;
+  padding: 9px 20px;
+  position: relative;
+  z-index: 10;
+}
+@media screen and (max-width: 920px) {
+  .main .main-ships .rocket-table-container .rocket-table .tbody .tr-content .title {
+    align-items: center;
+    display: flex;
+    max-width: 200px;
+    text-align: left;
+    width: 100%;
+  }
+}
+.main .main-ships .rocket-table-container .rocket-table .tbody .tr-content .text {
+  font-size: 14px;
+  letter-spacing: 0.025em;
+  line-height: 22px;
+  margin: 0 auto;
+  max-width: 129px;
+  padding: 16px;
+  text-align: left;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 920px) {
+  .main .main-ships .rocket-table-container .rocket-table .tbody .tr-content .text {
+    margin: 0;
+    align-items: center;
+    display: flex;
+    max-width: initial;
+    text-align: left;
+    width: 100%;
+  }
 }
 
 .footer {
@@ -600,6 +840,9 @@
 }
 .all-container.ships .header .header-info-content.ships {
   display: flex;
+}
+.all-container.ships .main-ships {
+  display: block;
 }
 
 /*# sourceMappingURL=styles.css.map */

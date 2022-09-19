@@ -80,6 +80,9 @@
             height: 450px;
             overflow: hidden;
             width: 450px;
+            & img{
+              min-height: 100%;
+            }
           }
           & .neural-network-info {
             max-width: 350px;

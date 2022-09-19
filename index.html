@@ -9,11 +9,10 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/scripts.js" defer></script>
-  <script src="js/script.js" defer></script>
   <title>Desafio Toodoo 1 | Lucas Silva</title>
 </head>
 <body>
-  <section class="all-container space">
+  <section class="all-container home">
     <header class="header">
       <section class="header-bar">
         <nav class="header-bar-container">
@@ -95,7 +94,7 @@
           <p class="subtitle">Venha aprender</p>
           <h3 class="title">O que abordaremos?</h3>
           <ul class="learn-cards-list">
-            <li class="learn-cards-item">
+            <li class="learn-cards-item" page="space">
               <figure class="figure"><img src="img/ship.png" alt="nave"></figure>
               <h4 class="title">Astronomia</h4>
               <p class="text">
@@ -105,7 +104,7 @@
                 Quero conhecer
               </a>
             </li>
-            <li class="learn-cards-item">
+            <li class="learn-cards-item" page="intelligence">
               <figure class="figure"><img src="img/globe.png" alt="nave"></figure>
               <h4 class="title">Inteligência artificial</h4>
               <p class="text">
@@ -115,7 +114,7 @@
                 Quero conhecer
               </a>
             </li>
-            <li class="learn-cards-item">
+            <li class="learn-cards-item" page="space">
               <figure class="figure"><img src="img/ship.png" alt="nave"></figure>
               <h4 class="title">Astronomia</h4>
               <p class="text">
@@ -125,7 +124,7 @@
                 Quero conhecer
               </a>
             </li>
-            <li class="learn-cards-item">
+            <li class="learn-cards-item" page="intelligence">
               <figure class="figure"><img src="img/globe.png" alt="nave"></figure>
               <h4 class="title">Inteligência artificial</h4>
               <p class="text">
@@ -150,6 +149,7 @@
               </tr>
             </table>
           </form>
+          <p class="text below">você poderá cancelar quando quiser</p>
         </div>
       </section>
       <section class="main-space">
@@ -167,33 +167,6 @@
               <h3 class="title">Foguetes</h3>
             </div>
             <ul class="releases-list rockets">
-              <!-- <li class="last-release-item status-inactive">
-                <figure class="card-image">
-                  <img src="img/rocket-card.png" alt="starlink 2">
-                </figure>
-                <p class="ship-status">Launch</p>
-                <p class="name">starlink 2</p>
-                <a href="#" class="button status-inactive">Inactive</a>
-                <a href="#" class="button status-active">Active</a>
-              </li>
-              <li class="last-release-item">
-                <figure class="card-image">
-                  <img src="img/rocket-card.png" alt="starlink 2">
-                </figure>
-                <p class="ship-status">Launch</p>
-                <p class="name">starlink 2</p>
-                <a href="#" class="button status-inactive">Inactive</a>
-                <a href="#" class="button status-active">Active</a>
-              </li>
-              <li class="last-release-item status-inactive">
-                <figure class="card-image">
-                  <img src="img/rocket-card.png" alt="starlink 2">
-                </figure>
-                <p class="ship-status">Launch</p>
-                <p class="name">starlink 2</p>
-                <a href="#" class="button status-inactive">Inactive</a>
-                <a href="#" class="button status-active">Active</a>
-              </li> -->
             </ul>
           </div>
 
@@ -259,6 +232,93 @@
             <br><br>
             Uma utilização bastante comum das redes neurais são aplicadas aos cálculos de ajuste do lançador de foguetes, inclusive, você pode consultar alguns lançamentos e foguetes clicando <a href="#" class="marked">aqui</a>
           </p>
+        </div>
+      </section>
+      <section class="main-ships">
+        <div class="main-ships-container">
+          <div class="rocket-info">
+            <p class="subtitle">Sobre</p>
+            <h3 class="title">Perceptron</h3>
+            <p class="text">
+              O Falcon 9 (Falcão 9) é um foguete de dois estágios projetado e construído pela SpaceX no Estados Unidos. É movido pelos motores Merlin, também desenvolvidos pela SpaceX, queimando oxigênio líquido (LOX) e querosene refinado (RP-1) como propelentes. Seu nome deriva da composição da famosa Millenium Falcon com os nove motores do primeiro estágio do foguete..
+            </p>
+          </div>
+          <figure class="rocket-image">
+            <img src="img/rocket-2.png" alt="example">
+          </figure>
+        </div>
+        <div class="rocket-table-container">
+          <h3 class="title">informações do lançamento</h3>
+          <table class="rocket-table">
+            <tbody class="tbody">
+            <tr class="tr-content launch-date">
+              <td class="title">Launch date</td>
+              <td class="text">01-03-2013</td>
+            </tr>
+            <tr class="tr-content launch-site">
+              <td class="title">Launch site</td>
+              <td class="text">01-03-2013</td>
+            </tr>
+            <tr class="tr-content launch-status">
+              <td class="title">Launch status</td>
+              <td class="text">01-03-2013</td>
+            </tr>
+            <tr class="tr-content type">
+              <td class="title">Type</td>
+              <td class="text">01-03-2013</td>
+            </tr>
+            <tr class="tr-content first-stage">
+              <td class="title">First stage</td>
+              <td class="text">01-03-2013</td>
+            </tr>
+            <tr class="tr-content second-stage">
+              <td class="title">Second stage</td>
+              <td class="text">01-03-2013</td>
+            </tr>
+            <tr class="tr-content details">
+              <td class="title">Details</td>
+              <td class="text">
+                Last launch of the original Falcon 9 v1.0 launch vehicle
+              </td>
+            </tr>
+          </tbody>
+          </table>
+        </div>
+        <div class="main-ships-container">
+          <div class="rocket-video">
+              <iframe width="524" height="335" src="https://www.youtube.com/embed/0a_00nJ_Y88" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <figure class="video-paused"
+              onclick="this.style = 'display: none;'">
+                <img src="img/rocket.png" alt="rocket">
+                <figure class="play-button">
+                </figure>
+                <ul class="list-link">
+                  <li>
+                    <a href="#">
+                      <figure class="youtube">
+                        <img src="img/logo-youtube.png" alt="youtube">
+                      </figure>
+                      <p>ver pelo youtube</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <p>ver pelo reddit</p>
+                      <figure class="reddit">
+                        <img src="img/logo-reddit.png" alt="reddit">
+                      </figure>
+                    </a>
+                  </li>
+                </ul>
+              </figure>
+          </div>
+          <div class="rocket-info">
+            <p class="subtitle">Assista</p>
+            <h3 class="title">relembre este momento</h3>
+            <p class="text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+            </p>
+          </div>
         </div>
       </section>
     </main>
