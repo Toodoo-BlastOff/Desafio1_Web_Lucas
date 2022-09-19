@@ -78,17 +78,13 @@
         position: relative;
         &::before {
           @extend %after-before;
-          @include square(143px);
-          background-color: $color-green-light;
-          border-radius: 50%;
+          @extend %light-green;
           bottom: -87px;
-          filter: blur(185px);
           left: -71px;
-          position: absolute;
         }
         & .learn-cards-item {
           @extend %bg-glass;
-          padding: 37px 27px 16px;
+          padding: 27px 27px 16px;
           position: relative;
           width: 260px;
           z-index: 2;
@@ -107,6 +103,7 @@
           }
           & .card-item-button {
             @extend %card-button;
+            line-height: 22px;
             width: 205px;
           }
         }
@@ -121,12 +118,8 @@
       position: relative;
       &::before {
         @extend %after-before;
-        @include square(143px);
-        background-color: $color-green-light;
-        border-radius: 50%;
+        @extend %light-green;
         bottom: -17px;
-        filter: blur(185px);
-        position: absolute;
         right: -17px;
       }
       & .title,
@@ -171,6 +164,9 @@
                 outline: none;
                 padding: 20px 15px;
                 width: 100%;
+                &::placeholder{
+                  color: $font-color;
+                }
               }
             }
             & .td-submit {
@@ -392,7 +388,8 @@
           width: 100%;
           &:before{
             @extend %after-before;
-            background-color: #0005;
+            background-color: #0007;
+            cursor: initial;
             height: 100%;
             left: 0;
             position: absolute;
@@ -402,7 +399,7 @@
           }
           &:hover {
             &::before{
-            background-color: #000a;
+            background-color: #0005;
             }
             & .play-button {
               opacity: 1;

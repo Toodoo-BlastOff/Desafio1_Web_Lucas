@@ -1,9 +1,9 @@
 .header {
-  background-color: $bg-header-footer;
+  background-color: $bg-header;
   padding-top: 100px;
   position: relative;
   & .header-bar {
-    background-color: $bg-header-footer-08;
+    background-color: $bg-header-08;
     height: 100px;
     position: fixed;
     top: 0;
@@ -24,7 +24,8 @@
           position: relative;
           & .text {
             color: $font-color;
-            font-weight: bold;
+            font-weight: 700;
+            letter-spacing: 0.025em;
             text-transform: uppercase;
           }
         }

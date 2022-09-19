@@ -17,6 +17,11 @@ class AstronomyCard {
         return selected;
       }
       event.preventDefault();
+
+      if (this.nodeCard.classList.contains("status-inactive")) {
+        return;
+      }
+
       const index = this.nodeCard.getAttribute("rocketIndex");
       const selected = select();
 
@@ -49,40 +54,39 @@ class AstronomyCard {
       tdSecondStage.innerText = pageRocketSecondStage ? `Payloads: ${pageRocketSecondStage}Kg` : "not found";
       tdDetails.innerText = pageRocketDetails || "not found";
 
-      const videoContainer = `
+      const videoContainer =
+      `
       <div class="rocket-video">
-              <iframe width="524" height="335px" src="https://www.youtube.com/embed/${pageRocketVideoId}" title="${rocketName}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-              </iframe>
-              <figure class="video-paused"
-              onclick="this.style = 'display: none;'">
-                <img src="${pageRocketImg}" alt="${rocketName}">
-                <figure class="play-button">
-                </figure>
-                <ul class="list-link">
-                  <li>
-                    <a href="${pageRocketVideolink}" target="__blank">
-                      <figure class="youtube">
-                        <img src="img/logo-youtube.png" alt="youtube">
-                      </figure>
-                      <p>ver pelo youtube</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="${pageRocketRedditlink}" target="__blank">
-                      <p>ver pelo reddit</p>
-                      <figure class="reddit">
-                        <img src="img/logo-reddit.png" alt="reddit">
-                      </figure>
-                    </a>
-                  </li>
-                </ul>
-              </figure>
-          </div>
+          <iframe width="524" height="335px" src="https://www.youtube.com/embed/${pageRocketVideoId}" title="${rocketName}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+          </iframe>
+          <figure class="video-paused"
+          onclick="this.style = 'display: none;'">
+            <img src="${pageRocketImg}" alt="${rocketName}">
+            <figure class="play-button">
+            </figure>
+            <ul class="list-link">
+              <li>
+                <a href="${pageRocketVideolink}" target="__blank">
+                  <figure class="youtube">
+                    <img src="img/logo-youtube.png" alt="youtube">
+                  </figure>
+                  <p>ver pelo youtube</p>
+                </a>
+              </li>
+              <li>
+                <a href="${pageRocketRedditlink}" target="__blank">
+                  <p>ver pelo reddit</p>
+                  <figure class="reddit">
+                    <img src="img/logo-reddit.png" alt="reddit">
+                  </figure>
+                </a>
+              </li>
+            </ul>
+          </figure>
+      </div>
       `;
 
-      rocketVideoContainer.removeChild(
-        rocketVideoContainer.querySelector(".rocket-video"),
-      );
+      rocketVideoContainer.removeChild(rocketVideoContainer.querySelector(".rocket-video"));
       rocketVideoContainer.insertAdjacentHTML("afterbegin", videoContainer);
 
       scrollToY(0);
@@ -105,9 +109,8 @@ class AstronomyCard {
   }
   createRocketsCard(index) {
     const card = `
-    <li class="last-release-item ${
-      this.status ? "" : "status-inactive"
-    }" rocketIndex="${index}">
+    <li class="last-release-item
+    ${ this.status ? "" : "status-inactive"}" rocketIndex="${index}">
       <figure class="card-image">
         <img src="${this.image}" alt="${this.name}">
       </figure>
@@ -128,14 +131,13 @@ class RocketInfo {
     this.rocket = rocket;
     this.laucher = laucher;
   }
-
-  async showInfo() {}
 }
 
 const allContainer = document.querySelector(".all-container");
 const buttonScrollDown = document.querySelector(".scroll-down-button");
 const buttonsNavigation = document.querySelectorAll(".nav-list .nav-list-item");
 const pagesNavigation = ["ships"];
+const neuralNetworkAnchor = document.querySelector(".main-intelligence .anchor");
 
 const lastReleasesList = document.querySelector(".last-releases-list");
 const releasesRocketList = document.querySelector(".releases-list");
@@ -193,8 +195,7 @@ async function fetchRockets(dataLaunchers) {
   for (let i = 0; i <= 2; i++) {
     const obj = data[i];
     const objLaunch = locateLaunch(obj, i);
-    const image =
-      objLaunch.links.mission_patch || objLaunch.links.mission_patch;
+    const image = objLaunch.links.mission_patch || objLaunch.links.mission_patch;
     const name = objLaunch.rocket.rocket_name;
     const type = obj.rocket_type;
     const status = obj.active;
@@ -233,6 +234,14 @@ buttonsNavigation.forEach((button) => {
 });
 
 buttonScrollDown.addEventListener("click", scrollToMain);
+
+neuralNetworkAnchor.addEventListener("click", (event) => {
+  event.preventDefault();
+  scrollToY(0);
+  setTimeout(() => {
+    navigateMenu("space");
+  }, 100);
+});
 
 fetchLaunchers();
 
