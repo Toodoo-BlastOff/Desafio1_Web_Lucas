@@ -3,8 +3,9 @@
 // end import's
 
 // Variables
-$bg-header-footer-08: #0c0c0cee;
-$bg-header-footer: #0c0c0c;
+$bg-footer: #000101;
+$bg-header-08: #0c0c0cee;
+$bg-header: #0c0c0c;
 $color-blue: #090e6c;
 $color-green-dark: #01ac8b;
 $color-green-light: #01eabd;
@@ -79,7 +80,7 @@ $font-viga: "Viga", sans-serif;
     rgb(97, 97, 97, 10%) 85%
   );
   border-radius: 15px;
-  border: solid 2px #505050;
+  border: solid 2px #3D3C3C;
 }
 %card-button {
   background-image: linear-gradient(
@@ -139,5 +140,13 @@ $font-viga: "Viga", sans-serif;
       text-align: center;
     }
   }
+}
+
+%light-green {
+  @include square(143px);
+  background-color: $color-green-light;
+  border-radius: 50%;
+  filter: blur(184px);
+  position: absolute;
 }
 // End placeholder's

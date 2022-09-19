@@ -21,7 +21,7 @@
   backdrop-filter: blur(13px);
   background-image: linear-gradient(135deg, rgba(88, 88, 88, 0.75), rgba(97, 97, 97, 0.1) 85%);
   border-radius: 15px;
-  border: solid 2px #505050;
+  border: solid 2px #3D3C3C;
 }
 
 .main .main-space .main-space-container .releases-content .last-releases-list .last-release-item .button, .main .main-space .main-space-container .releases-content .releases-list .last-release-item .button, .main .main-home .newsletter-container .newsletter-form .form-table .form-table-tr .td-submit input, .main .main-home .newsletter-container .newsletter-form .form-table .form-table-tr .td-submit, .main .main-home .come-learn-container .learn-cards-list .learn-cards-item .card-item-button {
@@ -86,6 +86,15 @@
   text-align: center;
 }
 
+.main .main-home .newsletter-container::before, .main .main-home .come-learn-container .learn-cards-list::before {
+  height: 143px;
+  width: 143px;
+  background-color: #01eabd;
+  border-radius: 50%;
+  filter: blur(184px);
+  position: absolute;
+}
+
 .header {
   background-color: #0c0c0c;
   padding-top: 100px;
@@ -126,7 +135,8 @@
 }
 .header .header-bar .header-bar-container .nav-list .nav-list-item .text {
   color: #fff;
-  font-weight: bold;
+  font-weight: 700;
+  letter-spacing: 0.025em;
   text-transform: uppercase;
 }
 .header .header-bar .header-bar-container .toodoo-logo {
@@ -343,17 +353,11 @@
   position: relative;
 }
 .main .main-home .come-learn-container .learn-cards-list::before {
-  height: 143px;
-  width: 143px;
-  background-color: #01eabd;
-  border-radius: 50%;
   bottom: -87px;
-  filter: blur(185px);
   left: -71px;
-  position: absolute;
 }
 .main .main-home .come-learn-container .learn-cards-list .learn-cards-item {
-  padding: 37px 27px 16px;
+  padding: 27px 27px 16px;
   position: relative;
   width: 260px;
   z-index: 2;
@@ -372,6 +376,7 @@
   margin-bottom: 20px;
 }
 .main .main-home .come-learn-container .learn-cards-list .learn-cards-item .card-item-button {
+  line-height: 22px;
   width: 205px;
 }
 .main .main-home .newsletter-container {
@@ -380,13 +385,7 @@
   position: relative;
 }
 .main .main-home .newsletter-container::before {
-  height: 143px;
-  width: 143px;
-  background-color: #01eabd;
-  border-radius: 50%;
   bottom: -17px;
-  filter: blur(185px);
-  position: absolute;
   right: -17px;
 }
 .main .main-home .newsletter-container .title, .main .main-home .newsletter-container .subtitle, .main .main-home .newsletter-container .text {
@@ -432,6 +431,9 @@
   outline: none;
   padding: 20px 15px;
   width: 100%;
+}
+.main .main-home .newsletter-container .newsletter-form .form-table .form-table-tr .td-input input::placeholder {
+  color: #fff;
 }
 .main .main-home .newsletter-container .newsletter-form .form-table .form-table-tr .td-submit {
   height: 60px;
@@ -617,7 +619,8 @@
   width: 100%;
 }
 .main .main-ships .main-ships-container .rocket-video .video-paused:before {
-  background-color: rgba(0, 0, 0, 0.3333333333);
+  background-color: rgba(0, 0, 0, 0.4666666667);
+  cursor: initial;
   height: 100%;
   left: 0;
   position: absolute;
@@ -626,7 +629,7 @@
   width: 100%;
 }
 .main .main-ships .main-ships-container .rocket-video .video-paused:hover::before {
-  background-color: rgba(0, 0, 0, 0.6666666667);
+  background-color: rgba(0, 0, 0, 0.3333333333);
 }
 .main .main-ships .main-ships-container .rocket-video .video-paused:hover .play-button {
   opacity: 1;
@@ -781,7 +784,7 @@
 }
 
 .footer {
-  background-color: #0c0c0c;
+  background-color: #000101;
   border-top: solid 1px #fff;
   height: 110px;
 }
